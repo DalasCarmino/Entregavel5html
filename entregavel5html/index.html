@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mini Projeto - Consumo de APIs</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Mini Projeto JavaScript</h1>
+        <p>Manipulação de dados, consumo de APIs e DOM dinâmico.</p>
+
+        <nav>
+            <ul>
+                <li><a href="#pedidos">Validação de pedidos</a></li>
+                <li><a href="#cep">Buscador de CEP</a></li>
+                <li><a href="#pokedex">Mini Pokédex</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ====================================== -->
+        <!-- PARTE 1: MANIPULAÇÃO E VALIDAÇÃO        -->
+        <!-- ====================================== -->
+
+        <section id="pedidos">
+            <h2>1. Validação de pedidos</h2>
+
+            <p>
+                Nesta seção, o JavaScript validará os pedidos,
+                filtrará os pedidos pagos e calculará o total faturado.
+            </p>
+
+            <h3>Pedidos válidos e pagos</h3>
+            <ul id="lista-pedidos">
+                <!-- Os pedidos serão inseridos pelo JavaScript. -->
+            </ul>
+
+            <p>
+                <strong>Total faturado:</strong>
+                <span id="total-faturado">Aguardando processamento...</span>
+            </p>
+        </section>
+
+
+        <!-- ====================================== -->
+        <!-- PARTE 2: BUSCADOR DE CEP                -->
+        <!-- ====================================== -->
+
+        <section id="cep">
+            <h2>2. Buscador de CEP</h2>
+
+            <p>
+                Digite um CEP brasileiro com 8 dígitos para consultar
+                o endereço utilizando a API ViaCEP.
+            </p>
+
+            <form id="formulario-cep">
+                <label for="input-cep">CEP:</label>
+
+                <input
+                    type="text"
+                    id="input-cep"
+                    name="cep"
+                    placeholder="Ex.: 01001000"
+                    inputmode="numeric"
+                    maxlength="9"
+                    autocomplete="postal-code"
+                    required
+                >
+
+                <button type="submit" id="botao-cep">
+                    Buscar CEP
+                </button>
+            </form>
+
+            <!-- Estado: carregando, erro ou mensagem informativa -->
+            <p id="status-cep" role="status" aria-live="polite"></p>
+
+            <!-- Resultado do endereço -->
+            <div id="resultado-cep">
+                <h3>Endereço encontrado</h3>
+
+                <dl id="detalhes-cep">
+                    <!-- Rua, bairro, cidade e UF serão criados pelo JavaScript. -->
+                </dl>
+            </div>
+
+            <!-- Bônus: histórico de pesquisas -->
+            <section id="historico">
+                <h3>Histórico de CEPs pesquisados</h3>
+
+                <ul id="lista-historico-cep">
+                    <!-- O histórico será inserido pelo JavaScript. -->
+                </ul>
+            </section>
+        </section>
+
+
+        <!-- ====================================== -->
+        <!-- PARTE 3: MINI POKÉDEX                   -->
+        <!-- ====================================== -->
+
+        <section id="pokedex">
+            <h2>3. Mini Pokédex</h2>
+
+            <p>
+                Pesquise um Pokémon pelo nome para consultar sua imagem
+                e seus tipos utilizando a API PokéAPI.
+            </p>
+
+            <form id="formulario-pokemon">
+                <label for="input-pokemon">Nome do Pokémon:</label>
+
+                <input
+                    type="text"
+                    id="input-pokemon"
+                    name="pokemon"
+                    placeholder="Ex.: pikachu"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" id="botao-pokemon">
+                    Buscar Pokémon
+                </button>
+            </form>
+
+            <!-- Estado: carregando, erro ou mensagem informativa -->
+            <p id="status-pokemon" role="status" aria-live="polite"></p>
+
+            <!-- Resultado do Pokémon -->
+            <article id="resultado-pokemon">
+                <h3 id="nome-pokemon"></h3>
+
+                <img
+                    id="imagem-pokemon"
+                    src=""
+                    alt=""
+                    width="160"
+                    height="160"
+                >
+
+                <h4>Tipos</h4>
+
+                <ul id="tipos-pokemon">
+                    <!-- Os tipos serão inseridos pelo JavaScript. -->
+                </ul>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Projeto acadêmico de JavaScript — Consumo de APIs.</p>
+    </footer>
+
+    <!-- O arquivo JavaScript será carregado após os elementos HTML. -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
